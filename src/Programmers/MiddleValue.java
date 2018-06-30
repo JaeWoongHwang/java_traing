@@ -2,26 +2,14 @@ package Programmers;
 
 public class MiddleValue {
 	String getMiddle(String word) {
-		// Define Variable
-		int i = 0;
+		int length = word.length();
 		String result = "";
 
-		// Parse String to Char
-		char[] charArray = word.toCharArray();
-
-		// Char Array to String Array
-		String[] strArray = new String[charArray.length];
-		for (int y = 0; y < charArray.length; y++) {
-			strArray[y] = String.valueOf(charArray[y]);
-		}
-
-		// Inspect Value Character
-		if (strArray.length % 2 == 0) {
-			i = strArray.length / 2;
-			result = strArray[i - 1] + strArray[i];
+		// Inspect Value
+		if (length % 2 == 0) {
+			result = word.substring((length / 2) - 1, (length / 2) + 1);
 		} else {
-			i = strArray.length / 2;
-			result = strArray[i];
+			result = word.substring((length / 2), (length / 2) + 1);
 		}
 
 		return result;
