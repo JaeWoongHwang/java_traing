@@ -4,10 +4,10 @@ public class InspectString {
 
 	public static void main(String[] args) {
 		boolean answer = true;
-		String s = "a234";
+		String s = "1234";
 
 		if (s.length() == 4 || s.length() == 6) {
-			if (isNumber(s)) {
+			if (isStringDouble(s)) {
 				answer = true;
 			} else {
 				answer = false;
@@ -18,8 +18,13 @@ public class InspectString {
 		System.out.println(answer);
 	}
 
-	private static boolean isNumber(String s) {
-		return false;
+	private static boolean isStringDouble(String s) {
+		try {
+			Double.parseDouble(s);
+			return true;
+		} catch (NumberFormatException e) {
+			return false;
+		}
 	}
 
 }
