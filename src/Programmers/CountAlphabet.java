@@ -3,24 +3,29 @@ package Programmers;
 public class CountAlphabet {
 
 	public static void main(String[] args) {
-		String test = "pPooyY";
+		// Set variable
+		String test = "ppPooyY";
 		boolean answer = true;
-		int pCnt = 0;
-		int yCnt = 0;
+		int pCounter = 0;
+		int yCounter = 0;
 
+		// String to Char
 		char[] charArray = test.toCharArray();
 
-		String[] strArray = new String[charArray.length];
+		// Count
 		for (int i = 0; i < charArray.length; i++) {
-			strArray[i] = String.valueOf(charArray[i]);
+			if (charArray[i] == 'p' || charArray[i] == 'P') {
+				pCounter += 1;
+				continue;
+			}
+			if (charArray[i] == 'y' || charArray[i] == 'Y') {
+				yCounter += 1;
+				continue;
+			}
 		}
 
-		for (int i = 0; i < strArray.length; i++) {
-			if (strArray[i] == "p") {
-				pCnt += 1;
-			} else if (strArray[i] == "y") {
-				yCnt += 1;
-			}
+		if (pCounter != yCounter) {
+			answer = false;
 		}
 		System.out.println(answer);
 	}
