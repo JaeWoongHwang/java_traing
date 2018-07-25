@@ -3,27 +3,18 @@ package Programmers;
 public class NoDuplicate {
 
 	public static void main(String[] args) {
-		int[] arr = { 4, 4, 4, 4, 3, 3 };
-		int[] arr2 = new int[arr.length];
+		int[] array = { 4, 4, 4, 4, 3, 3 };
 
-		for (int i = 0; i < arr.length; i++) {
-			if (i + 1 < arr.length) {
-				if (arr[i] != arr[i + 1]) {
-					arr2[i] = arr[i];
-				} else {
-					
-					continue;
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] != array.length) {
+				if (array[i] == array[i + 1]) {
+					array.splice(i, 1);
 				}
-			} else {
-				if (i == arr.length) {
-					arr2[i] = arr[i];
-				}
-				break;
 			}
-
+			break;
 		}
-		for (int i = 0; i < arr2.length; i++) {
-			System.out.println(arr2[i]);
+		for (int i = 0; i < array.length; i++) {
+			System.out.println(array[i]);
 		}
 	}
 }
